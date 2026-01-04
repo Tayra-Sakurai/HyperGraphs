@@ -17,7 +17,7 @@ def main() -> None:
                             action='store_true',
                             help='Turn on the high pass filter mode.')
     hiloswitch.add_argument('--lowpass',
-                            action='store_false',
+                            action='store_true',
                             help='Turn on the low pass mode.')
     parser.add_argument('--encoding',
                         type=str,
