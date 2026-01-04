@@ -1,0 +1,37 @@
+functions.highpass package
+==========================
+
+Submodules
+----------
+
+functions.highpass.gain module
+------------------------------
+
+.. automodule:: functions.highpass.gain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+functions.highpass.voutc module
+-------------------------------
+
+.. automodule:: functions.highpass.voutc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+functions.highpass.vouts module
+-------------------------------
+
+.. automodule:: functions.highpass.vouts
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: functions.highpass
+   :members:
+   :show-inheritance:
+   :undoc-members:
