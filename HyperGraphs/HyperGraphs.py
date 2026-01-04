@@ -106,6 +106,7 @@ def load_data(
 
 def plotter(
     hilo: bool,
+    verbose: bool,
     data: ExperimentData,
     tau: float | None = None
 ) -> tuple[
@@ -145,6 +146,8 @@ def plotter(
     hilo : bool
         Whether the data is about the high pass filter or not.
         ``True`` indicates that the value is about high pass filter.
+    verbose : bool
+        Indicates whether to print parameters or not.
     data : ExperimentData
         The data.
     tau : float | None, optional
@@ -222,7 +225,7 @@ def plotter(
         h1 = lowpass.calc_voutsinphi_direct
         h2 = lowpass.calc_voutsinphi_from_theory
     points_gain = f1(data.v_in, data.v_out)
-    fit_gain, *_ = curve_fit(
+    fit_gain, err_gain = curve_fit(
         f2,
         data.frequency,
         points_gain,
@@ -233,7 +236,7 @@ def plotter(
         )
     )
     points_voutcosphi = g1(data.v_out, data.phi)
-    fit_voutcosphi, *_ = curve_fit(
+    fit_voutcosphi, err_voutcosphi = curve_fit(
         g2,
         data.frequency,
         points_voutcosphi,
@@ -246,7 +249,7 @@ def plotter(
         )
     )
     points_voutsinphi = h1(data.v_out, data.phi)
-    fit_voutsinphi, *_ = curve_fit(
+    fit_voutsinphi, err_voutsinphi = curve_fit(
         h2,
         data.frequency,
         points_voutsinphi,
@@ -279,6 +282,18 @@ def plotter(
     ax3.plot(fs1, h2(fs1, *fit_voutsinphi), '-')
     ax3.set_xscale('log')
     plt.show()
+    if verbose:
+        print('Gain Parameter:', fit_gain)
+        print('Standard error of the gain parameter:')
+        print(np.sqrt(np.diag(err_gain)))
+        print('V_out cos Phi')
+        print('[tau, V_in, Phi_1] =', fit_voutcosphi)
+        print('Satandard Errors:')
+        print(np.sqrt(np.diag(err_voutcosphi)))
+        print('V_out sin Phi')
+        print('[tau, V_in, Phi_1] =', fit_voutsinphi)
+        print('Standard Errors:')
+        print(np.sqrt(np.diag(err_voutsinphi)))
     return fit_gain, fit_voutcosphi, fit_voutsinphi, f2, g2, h2
 
 
@@ -331,9 +346,6 @@ def save_point(
     g2 : Callable
     h2 : Callable
     """
-    print('Gain Parameters:', fit_gain)
-    print('Same-Phase Component Parameters:', fit_voutcosphi)
-    print('Orthological-Phase Component Parameters:', fit_voutsinphi)
     r1 = np.arange(10, 50, 1)
     r2 = np.arange(50, 100, 2)
     r3 = np.arange(100, 500, 10)

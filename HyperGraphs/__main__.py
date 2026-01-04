@@ -22,6 +22,10 @@ def main() -> None:
     parser.add_argument('--encoding',
                         type=str,
                         help='The file encoding.')
+    parser.add_argument('-v',
+                        '--verbose',
+                        help='Indicates whether the parameters are displayed.',
+                        action='store_true')
     parser.add_argument('-o',
                         '--output',
                         type=Path,
@@ -30,14 +34,20 @@ def main() -> None:
     data = HyperGraphs.load_data(args.csvfile,
                                  args.encoding)
     hilo: bool
+    verbose: bool = False
     if args.highpass:
         hilo = True
     elif args.lowpass:
         hilo = False
     else:
         raise TypeError('Invalid args.')
-    k = HyperGraphs.plotter(hilo,
-                        data)
+    if args.verbose:
+        verbose = True
+    k = HyperGraphs.plotter(
+        hilo,
+        verbose,
+        data
+    )
     if args.output is not None:
         HyperGraphs.save_point(args.output, *k)
 
