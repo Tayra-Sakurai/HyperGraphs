@@ -1,0 +1,7 @@
+HyperGraphs
+===========
+
+.. toctree::
+   :maxdepth: 4
+
+   HyperGraphs

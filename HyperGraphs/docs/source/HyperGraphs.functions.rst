@@ -1,0 +1,19 @@
+HyperGraphs.functions package
+=============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   HyperGraphs.functions.highpass
+   HyperGraphs.functions.lowpass
+
+Module contents
+---------------
+
+.. automodule:: HyperGraphs.functions
+   :members:
+   :show-inheritance:
+   :undoc-members:
