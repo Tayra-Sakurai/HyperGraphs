@@ -315,6 +315,8 @@ def save_point(
 ) -> None:
     """Outputs the result points onto a csv file.
 
+    This also outputs the raw parameters.
+
     Parameters
     ----------
     target : Path
