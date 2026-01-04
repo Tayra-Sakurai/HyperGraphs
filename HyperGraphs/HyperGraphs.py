@@ -329,6 +329,9 @@ def save_point(
     g2 : Callable
     h2 : Callable
     """
+    print('Gain Parameters:', fit_gain)
+    print('Same-Phase Component Parameters:', fit_voutcosphi)
+    print('Orthological-Phase Component Parameters:', fit_voutsinphi)
     r1 = np.arange(10, 50, 1)
     r2 = np.arange(50, 100, 2)
     r3 = np.arange(100, 500, 10)
