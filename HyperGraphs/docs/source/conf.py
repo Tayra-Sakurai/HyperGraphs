@@ -20,7 +20,8 @@ release = '1.0.0'
 
 extensions = [
     'sphinx.ext.autodoc',
-    'numpydoc'
+    'numpydoc',
+    'sphinx.ext.githubpages',
 ]
 
 autodoc_default_options = {
