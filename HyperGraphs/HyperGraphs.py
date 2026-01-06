@@ -164,7 +164,7 @@ def plotter(
     f2 : Callable
         The gain function.
     g2 : Callable
-        The function of ``v_out \\* np.cos(phi)``.
+        The function of ``v_out * np.cos(phi)``.
     h2 : Callable
         The function to calculate ``v_out \\* np.sin(phi)``.
     """

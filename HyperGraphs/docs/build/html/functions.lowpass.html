@@ -44,7 +44,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'functions.lowpass';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="functions.highpass package" href="functions.highpass.html" />
+    <link rel="next" title="functions.lowpass.calc_gain_direct" href="generated/functions.lowpass.calc_gain_direct.html" />
+    <link rel="prev" title="functions.highpass.calc_voutsinphi_from_theory" href="generated/functions.highpass.calc_voutsinphi_from_theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -250,8 +251,24 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="functions.highpass.html">functions.highpass package</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">functions.lowpass package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.highpass.html">functions.highpass package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_gain_direct.html">functions.highpass.calc_gain_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_gain_from_theory.html">functions.highpass.calc_gain_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_direct.html">functions.highpass.calc_voutcosphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_from_theory.html">functions.highpass.calc_voutcosphi_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_direct.html">functions.highpass.calc_voutsinphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_from_theory.html">functions.highpass.calc_voutsinphi_from_theory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">functions.lowpass package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_gain_direct.html">functions.lowpass.calc_gain_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_gain_from_theory.html">functions.lowpass.calc_gain_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_direct.html">functions.lowpass.calc_voutcosphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_from_theory.html">functions.lowpass.calc_voutcosphi_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_direct.html">functions.lowpass.calc_voutsinphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_from_theory.html">functions.lowpass.calc_voutsinphi_from_theory</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -317,121 +334,60 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
 </section>
-<section id="module-functions.lowpass.gain">
-<span id="functions-lowpass-gain-module"></span><h2>functions.lowpass.gain module<a class="headerlink" href="#module-functions.lowpass.gain" title="Link to this heading">#</a></h2>
-<p>This calculates the gain of the low-pass filter.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.lowpass.gain.calc_gain_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.lowpass.gain.</span></span><span class="sig-name descname"><span class="pre">calc_gain_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.lowpass.gain.calc_gain_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the gain theoretically.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>frequency</strong><span class="classifier">_Array1D</span></dt><dd><p>The frequency.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>gain</strong><span class="classifier">_Array1D</span></dt><dd><p>The gain.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="functions-lowpass-gain-module">
+<h2>functions.lowpass.gain module<a class="headerlink" href="#functions-lowpass-gain-module" title="Link to this heading">#</a></h2>
 </section>
-<section id="module-functions.lowpass.voutc">
-<span id="functions-lowpass-voutc-module"></span><h2>functions.lowpass.voutc module<a class="headerlink" href="#module-functions.lowpass.voutc" title="Link to this heading">#</a></h2>
-<p>Functions to calculate the same phase dimention of the output voltage.</p>
-<p>This module is for low pass filters.</p>
-<section id="see-also">
-<h3>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h3>
-<p>highpass.voutc : for more details in common.</p>
+<section id="functions-lowpass-voutc-module">
+<h2>functions.lowpass.voutc module<a class="headerlink" href="#functions-lowpass-voutc-module" title="Link to this heading">#</a></h2>
 </section>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.lowpass.voutc.calc_voutcosphi_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.lowpass.voutc.</span></span><span class="sig-name descname"><span class="pre">calc_voutcosphi_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.lowpass.voutc.calc_voutcosphi_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>This is the theoretical value calculator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>v_out</strong><span class="classifier">_Array1D</span></dt><dd><p>The frequency.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-<dt><strong>v_in</strong><span class="classifier">floating[Any]</span></dt><dd><p>The input voltage.</p>
-</dd>
-<dt><strong>phi_1</strong><span class="classifier">floating[ANy]</span></dt><dd><p>The phase change.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutcosphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The value.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">voutc.calc_voutcosphi_from_theory</span></code></dt><dd><p>for details.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>Please do not call this function directly.
-Instead, please give this to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>.</p>
-</dd></dl>
-
-</section>
-<section id="module-functions.lowpass.vouts">
-<span id="functions-lowpass-vouts-module"></span><h2>functions.lowpass.vouts module<a class="headerlink" href="#module-functions.lowpass.vouts" title="Link to this heading">#</a></h2>
-<p>Calculates the voltage component orthorogical to the input voltage.</p>
-<p>Both theoretical and experimental values are supported.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.lowpass.vouts.calc_voutsinphi_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.lowpass.vouts.</span></span><span class="sig-name descname"><span class="pre">calc_voutsinphi_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.lowpass.vouts.calc_voutsinphi_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>This is the theoretical value calculator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>v_out</strong><span class="classifier">_Array1D</span></dt><dd><p>The frequency.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-<dt><strong>v_in</strong><span class="classifier">floating[Any]</span></dt><dd><p>The input voltage.</p>
-</dd>
-<dt><strong>phi_1</strong><span class="classifier">floating[ANy]</span></dt><dd><p>The phase change.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutcosphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The value.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">highpass.vouts.calc_voutsinphi_from_theory</span></code></dt><dd><p>for details.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>Please do not call this function directly.
-Instead, please give this to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>.</p>
-</dd></dl>
-
+<section id="functions-lowpass-vouts-module">
+<h2>functions.lowpass.vouts module<a class="headerlink" href="#functions-lowpass-vouts-module" title="Link to this heading">#</a></h2>
 </section>
 <section id="module-functions.lowpass">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-functions.lowpass" title="Link to this heading">#</a></h2>
-<p>This is the package for the module.</p>
+<p>This is the functions about the values of the low-pass filter.</p>
+<section id="gain-functions">
+<h3>Gain Functions<a class="headerlink" href="#gain-functions" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_gain_direct.html#functions.lowpass.calc_gain_direct" title="functions.lowpass.calc_gain_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_gain_direct</span></code></a>(v_in, v_out)</p></td>
+<td><p>Calculates the gain directly from the input and output voltage.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_gain_from_theory.html#functions.lowpass.calc_gain_from_theory" title="functions.lowpass.calc_gain_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_gain_from_theory</span></code></a>(frequency, tau)</p></td>
+<td><p>Calculates the gain theoretically.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="same-phase-component">
+<h3>Same-Phase Component<a class="headerlink" href="#same-phase-component" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_direct.html#functions.lowpass.calc_voutcosphi_direct" title="functions.lowpass.calc_voutcosphi_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutcosphi_direct</span></code></a>(v_out, phi)</p></td>
+<td><p>Calculates the value of the same-phase component of the output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_from_theory.html#functions.lowpass.calc_voutcosphi_from_theory" title="functions.lowpass.calc_voutcosphi_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutcosphi_from_theory</span></code></a>(frequency, tau, ...)</p></td>
+<td><p>This is the theoretical value calculator.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="orthological-phase-component">
+<h3>Orthological-Phase Component<a class="headerlink" href="#orthological-phase-component" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_direct.html#functions.lowpass.calc_voutsinphi_direct" title="functions.lowpass.calc_voutsinphi_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutsinphi_direct</span></code></a>(v_out, phi)</p></td>
+<td><p>Calculates the orthorogical component experimentally.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_from_theory.html#functions.lowpass.calc_voutsinphi_from_theory" title="functions.lowpass.calc_voutsinphi_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutsinphi_from_theory</span></code></a>(frequency, tau, ...)</p></td>
+<td><p>This is the theoretical value calculator.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
@@ -446,13 +402,22 @@ Instead, please give this to <code class="docutils literal notranslate"><span cl
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="functions.highpass.html"
+       href="generated/functions.highpass.calc_voutsinphi_from_theory.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">functions.highpass package</p>
+        <p class="prev-next-title">functions.highpass.calc_voutsinphi_from_theory</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="generated/functions.lowpass.calc_gain_direct.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">functions.lowpass.calc_gain_direct</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -474,20 +439,15 @@ Instead, please give this to <code class="docutils literal notranslate"><span cl
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.lowpass.gain">functions.lowpass.gain module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.lowpass.gain.calc_gain_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_gain_from_theory()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-lowpass-gain-module">functions.lowpass.gain module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-lowpass-voutc-module">functions.lowpass.voutc module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-lowpass-vouts-module">functions.lowpass.vouts module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.lowpass">Module contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-functions">Gain Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#same-phase-component">Same-Phase Component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthological-phase-component">Orthological-Phase Component</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.lowpass.voutc">functions.lowpass.voutc module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.lowpass.voutc.calc_voutcosphi_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_voutcosphi_from_theory()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.lowpass.vouts">functions.lowpass.vouts module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.lowpass.vouts.calc_voutsinphi_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_voutsinphi_from_theory()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.lowpass">Module contents</a></li>
 </ul>
   </nav></div>
 

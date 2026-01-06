@@ -130,13 +130,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="functions.html">
-    functions package
-  </a>
-</li>
-
   </ul>
 </nav></div>
       
@@ -213,13 +206,6 @@
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
     HyperGraphs package
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="functions.html">
-    functions package
   </a>
 </li>
 
@@ -322,24 +308,16 @@
 <li class="toctree-l1"><a class="reference internal" href="HyperGraphs.functions.html">HyperGraphs.functions package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="HyperGraphs.functions.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="HyperGraphs.functions.highpass.html">HyperGraphs.functions.highpass package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#module-HyperGraphs.functions.highpass.gain">HyperGraphs.functions.highpass.gain module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#module-HyperGraphs.functions.highpass.voutc">HyperGraphs.functions.highpass.voutc module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#module-HyperGraphs.functions.highpass.vouts">HyperGraphs.functions.highpass.vouts module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#module-HyperGraphs.functions.highpass">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.highpass.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="HyperGraphs.functions.lowpass.html">HyperGraphs.functions.lowpass package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#module-HyperGraphs.functions.lowpass.gain">HyperGraphs.functions.lowpass.gain module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#module-HyperGraphs.functions.lowpass.voutc">HyperGraphs.functions.lowpass.voutc module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#module-HyperGraphs.functions.lowpass.vouts">HyperGraphs.functions.lowpass.vouts module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#module-HyperGraphs.functions.lowpass">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HyperGraphs.functions.lowpass.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="HyperGraphs.functions.html#module-HyperGraphs.functions">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HyperGraphs.functions.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -407,13 +385,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="HyperGraphs.plotter">
-<span class="sig-prename descclassname"><span class="pre">HyperGraphs.</span></span><span class="sig-name descname"><span class="pre">plotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hilo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#HyperGraphs.ExperimentData" title="HyperGraphs.ExperimentData"><span class="pre">ExperimentData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#HyperGraphs.plotter" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HyperGraphs.</span></span><span class="sig-name descname"><span class="pre">plotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hilo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#HyperGraphs.ExperimentData" title="HyperGraphs.ExperimentData"><span class="pre">ExperimentData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_Array1DF</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">_Array1DF</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#HyperGraphs.plotter" title="Link to this definition">#</a></dt>
 <dd><p>Fit the curve and outputs the graphs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>hilo</strong><span class="classifier">bool</span></dt><dd><p>Whether the data is about the high pass filter or not.
 <code class="docutils literal notranslate"><span class="pre">True</span></code> indicates that the value is about high pass filter.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Indicates whether to print parameters or not.</p>
 </dd>
 <dt><strong>data</strong><span class="classifier">ExperimentData</span></dt><dd><p>The data.</p>
 </dd>
@@ -431,7 +411,7 @@
 </dd>
 <dt><strong>f2</strong><span class="classifier">Callable</span></dt><dd><p>The gain function.</p>
 </dd>
-<dt><strong>g2</strong><span class="classifier">Callable</span></dt><dd><p>The function of <code class="docutils literal notranslate"><span class="pre">v_out</span> <span class="pre">\*</span> <span class="pre">np.cos(phi)</span></code>.</p>
+<dt><strong>g2</strong><span class="classifier">Callable</span></dt><dd><p>The function of <code class="docutils literal notranslate"><span class="pre">v_out</span> <span class="pre">*</span> <span class="pre">np.cos(phi)</span></code>.</p>
 </dd>
 <dt><strong>h2</strong><span class="classifier">Callable</span></dt><dd><p>The function to calculate <code class="docutils literal notranslate"><span class="pre">v_out</span> <span class="pre">\*</span> <span class="pre">np.sin(phi)</span></code>.</p>
 </dd>

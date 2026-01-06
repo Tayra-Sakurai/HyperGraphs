@@ -1,20 +1,16 @@
-﻿"""Functions to calculate the same phase dimention of the output voltage.
+﻿"""Calculates the voltage component orthorogical to the input voltage.
 
-This module is for low pass filters.
-
-See Also
---------
-highpass.voutc : for more details in common.
+Both theoretical and experimental values are supported.
 """
-from ..highpass import voutc
-from typing import Any
-import numpy as np
 from .._types import _Array1D
+import numpy as np
+from typing import Any
+from ..highpass import _vouts
 
-calc_voutcosphi_direct = voutc.calc_voutcosphi_direct
+calc_voutsinphi_direct = _vouts.calc_voutsinphi_direct
 
 
-def calc_voutcosphi_from_theory(
+def calc_voutsinphi_from_theory(
     frequency: _Array1D,
     tau: np.floating[Any],
     v_in: np.floating[Any],
@@ -45,12 +41,12 @@ def calc_voutcosphi_from_theory(
 
     See Also
     --------
-    voutc.calc_voutcosphi_from_theory : for details.
+    highpass.calc_voutsinphi_from_theory : for details.
     """
     tauomega = 2 * np.pi * tau * frequency
     den = np.sqrt(tauomega ** 2 + 1)
     cosine = 1 / den
     sine = tauomega / den
-    cosineval = cosine * np.cos(phi_1) - sine * np.sin(phi_1)
+    sineval = sine * np.cos(phi_1) + cosine * np.sin(phi_1)
     v_out = v_in / den
-    return v_out * cosineval
+    return v_out * sineval

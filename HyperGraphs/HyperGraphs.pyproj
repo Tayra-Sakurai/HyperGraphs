@@ -21,13 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="functions\highpass\gain.py" />
-    <Compile Include="functions\highpass\voutc.py" />
-    <Compile Include="functions\highpass\vouts.py" />
+    <Compile Include="functions\highpass\_gain.py" />
+    <Compile Include="functions\highpass\_voutc.py" />
+    <Compile Include="functions\highpass\_vouts.py" />
     <Compile Include="functions\highpass\__init__.py" />
-    <Compile Include="functions\lowpass\gain.py" />
-    <Compile Include="functions\lowpass\voutc.py" />
-    <Compile Include="functions\lowpass\vouts.py" />
+    <Compile Include="functions\lowpass\_gain.py" />
+    <Compile Include="functions\lowpass\_voutc.py" />
+    <Compile Include="functions\lowpass\_vouts.py" />
     <Compile Include="functions\lowpass\__init__.py" />
     <Compile Include="functions\_types.py" />
     <Compile Include="functions\__init__.py">
