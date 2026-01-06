@@ -1,0 +1,6 @@
+﻿functions.highpass.calc\_gain\_from\_theory
+===========================================
+
+.. currentmodule:: functions.highpass
+
+.. autofunction:: calc_gain_from_theory

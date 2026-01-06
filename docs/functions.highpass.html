@@ -44,7 +44,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'functions.highpass';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="functions.lowpass package" href="functions.lowpass.html" />
+    <link rel="next" title="functions.highpass.calc_gain_direct" href="generated/functions.highpass.calc_gain_direct.html" />
     <link rel="prev" title="functions package" href="functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -126,7 +126,7 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="HyperGraphs.html">
-    HyperGraphs module
+    HyperGraphs package
   </a>
 </li>
 
@@ -212,7 +212,7 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="HyperGraphs.html">
-    HyperGraphs module
+    HyperGraphs package
   </a>
 </li>
 
@@ -251,8 +251,24 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">functions.highpass package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.lowpass.html">functions.lowpass package</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">functions.highpass package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_gain_direct.html">functions.highpass.calc_gain_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_gain_from_theory.html">functions.highpass.calc_gain_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_direct.html">functions.highpass.calc_voutcosphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_from_theory.html">functions.highpass.calc_voutcosphi_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_direct.html">functions.highpass.calc_voutsinphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_from_theory.html">functions.highpass.calc_voutsinphi_from_theory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.lowpass.html">functions.lowpass package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_gain_direct.html">functions.lowpass.calc_gain_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_gain_from_theory.html">functions.lowpass.calc_gain_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_direct.html">functions.lowpass.calc_voutcosphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutcosphi_from_theory.html">functions.lowpass.calc_voutcosphi_from_theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_direct.html">functions.lowpass.calc_voutsinphi_direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions.lowpass.calc_voutsinphi_from_theory.html">functions.lowpass.calc_voutsinphi_from_theory</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -318,173 +334,63 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
 </section>
-<section id="module-functions.highpass.gain">
-<span id="functions-highpass-gain-module"></span><h2>functions.highpass.gain module<a class="headerlink" href="#module-functions.highpass.gain" title="Link to this heading">#</a></h2>
-<p>This is the module to calculate gains.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.gain.calc_gain_direct">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.gain.</span></span><span class="sig-name descname"><span class="pre">calc_gain_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#functions.highpass.gain.calc_gain_direct" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the gain directly from the input and output voltage.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>v_in</strong><span class="classifier">_Array1D</span></dt><dd><p>The input voltages.</p>
-</dd>
-<dt><strong>v_out</strong><span class="classifier">_Array1D</span></dt><dd><p>The output voltages. Must be one-to-one correspondent onto <code class="docutils literal notranslate"><span class="pre">v_in</span></code>.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>gain</strong><span class="classifier">_Array1D</span></dt><dd><p>The gain values.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>Please do not call this function directly.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.gain.calc_gain_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.gain.</span></span><span class="sig-name descname"><span class="pre">calc_gain_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.highpass.gain.calc_gain_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the theoretical gain value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>frequency</strong><span class="classifier">_Array1D</span></dt><dd><p>The values of frequencies of the voltage of source.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>gain</strong><span class="classifier">_Array1D</span></dt><dd><p>The derived gain values.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>This is made to be used in the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> function.</p>
-<p>The function is not considered to be called by users directly.</p>
-</dd></dl>
-
+<section id="functions-highpass-gain-module">
+<h2>functions.highpass.gain module<a class="headerlink" href="#functions-highpass-gain-module" title="Link to this heading">#</a></h2>
 </section>
-<section id="module-functions.highpass.voutc">
-<span id="functions-highpass-voutc-module"></span><h2>functions.highpass.voutc module<a class="headerlink" href="#module-functions.highpass.voutc" title="Link to this heading">#</a></h2>
-<p>Functions to calculate the same phase dimention of the output voltage.</p>
-<p>This module is for high pass filters.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.voutc.calc_voutcosphi_direct">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.voutc.</span></span><span class="sig-name descname"><span class="pre">calc_voutcosphi_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#functions.highpass.voutc.calc_voutcosphi_direct" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the value of the same-phase component of the output.</p>
-<p>This calculates it directly from the value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>v_out</strong><span class="classifier">_Array1D</span></dt><dd><p>The array of the output voltages.</p>
-</dd>
-<dt><strong>phi</strong><span class="classifier">_Array1D</span></dt><dd><p>The same shape array which represents the phase changes.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutcosphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The calculated values.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.voutc.calc_voutcosphi_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.voutc.</span></span><span class="sig-name descname"><span class="pre">calc_voutcosphi_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.highpass.voutc.calc_voutcosphi_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the theoetical value of the component.</p>
-<p>The value is derived from the time constant, input voltage,
-and the phase change of the voltage follower.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>frequency</strong><span class="classifier">_Array1D</span></dt><dd><p>The frequency data.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-<dt><strong>v_in</strong><span class="classifier">floating[Any]</span></dt><dd><p>The input voltage.</p>
-</dd>
-<dt><strong>phi_1</strong><span class="classifier">floating[Any]</span></dt><dd><p>The phase change of the voltage follower.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutcosphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The same-phase value of the output voltage.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="functions-highpass-voutc-module">
+<h2>functions.highpass.voutc module<a class="headerlink" href="#functions-highpass-voutc-module" title="Link to this heading">#</a></h2>
 </section>
-<section id="module-functions.highpass.vouts">
-<span id="functions-highpass-vouts-module"></span><h2>functions.highpass.vouts module<a class="headerlink" href="#module-functions.highpass.vouts" title="Link to this heading">#</a></h2>
-<p>Calculates the voltage component orthorogical to the input voltage.</p>
-<p>Both theoretical and experimental values are supported.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.vouts.calc_voutsinphi_direct">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.vouts.</span></span><span class="sig-name descname"><span class="pre">calc_voutsinphi_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_ArrayInShape</span><span class="p"><span class="pre">[</span></span><span class="pre">_shape1D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#functions.highpass.vouts.calc_voutsinphi_direct" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the orthorogical component experimentally.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>v_out</strong><span class="classifier">_Array1D</span></dt><dd><p>The outputs.</p>
-</dd>
-<dt><strong>phi</strong><span class="classifier">_Array1D</span></dt><dd><p>The displacement of the phases.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutsinphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The experimental value.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.highpass.vouts.calc_voutsinphi_from_theory">
-<span class="sig-prename descclassname"><span class="pre">functions.highpass.vouts.</span></span><span class="sig-name descname"><span class="pre">calc_voutsinphi_from_theory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Array1D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Array1D</span></span></span><a class="headerlink" href="#functions.highpass.vouts.calc_voutsinphi_from_theory" title="Link to this definition">#</a></dt>
-<dd><p>Calculates the theoetical value of the component.</p>
-<p>The value is derived from the time constant, input voltage,
-and the phase change of the voltage follower.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>frequency</strong><span class="classifier">_Array1D</span></dt><dd><p>The frequency data.</p>
-</dd>
-<dt><strong>tau</strong><span class="classifier">floating[Any]</span></dt><dd><p>The time constant.</p>
-</dd>
-<dt><strong>v_in</strong><span class="classifier">floating[Any]</span></dt><dd><p>The input voltage.</p>
-</dd>
-<dt><strong>phi_1</strong><span class="classifier">floating[Any]</span></dt><dd><p>The phase change of the voltage follower.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>voutcosphi</strong><span class="classifier">_Array1D</span></dt><dd><p>The value of the output voltage component orthological to the input.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="functions-highpass-vouts-module">
+<h2>functions.highpass.vouts module<a class="headerlink" href="#functions-highpass-vouts-module" title="Link to this heading">#</a></h2>
 </section>
 <section id="module-functions.highpass">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-functions.highpass" title="Link to this heading">#</a></h2>
-<p>This is a module.</p>
+<p>This is the functions about the values of the high-pass filter.</p>
+<section id="gain-functions">
+<h3>Gain Functions<a class="headerlink" href="#gain-functions" title="Link to this heading">#</a></h3>
+<p>Functions to calculate gain.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.highpass.calc_gain_direct.html#functions.highpass.calc_gain_direct" title="functions.highpass.calc_gain_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_gain_direct</span></code></a>(v_in, v_out)</p></td>
+<td><p>Calculates the gain directly from the input and output voltage.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.highpass.calc_gain_from_theory.html#functions.highpass.calc_gain_from_theory" title="functions.highpass.calc_gain_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_gain_from_theory</span></code></a>(frequency, tau)</p></td>
+<td><p>Calculates the theoretical gain value.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="same-phase-component">
+<h3>Same-Phase Component<a class="headerlink" href="#same-phase-component" title="Link to this heading">#</a></h3>
+<p>Functions to calculate the same-phase voltage of the output.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_direct.html#functions.highpass.calc_voutcosphi_direct" title="functions.highpass.calc_voutcosphi_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutcosphi_direct</span></code></a>(v_out, phi)</p></td>
+<td><p>Calculates the value of the same-phase component of the output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.highpass.calc_voutcosphi_from_theory.html#functions.highpass.calc_voutcosphi_from_theory" title="functions.highpass.calc_voutcosphi_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutcosphi_from_theory</span></code></a>(frequency, tau, ...)</p></td>
+<td><p>Calculates the theoetical value of the component.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="orthological-phase-component">
+<h3>Orthological-Phase Component<a class="headerlink" href="#orthological-phase-component" title="Link to this heading">#</a></h3>
+<p>Clalculates the orthological component of the output voltage.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_direct.html#functions.highpass.calc_voutsinphi_direct" title="functions.highpass.calc_voutsinphi_direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutsinphi_direct</span></code></a>(v_out, phi)</p></td>
+<td><p>Calculates the orthorogical component experimentally.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/functions.highpass.calc_voutsinphi_from_theory.html#functions.highpass.calc_voutsinphi_from_theory" title="functions.highpass.calc_voutsinphi_from_theory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_voutsinphi_from_theory</span></code></a>(frequency, tau, ...)</p></td>
+<td><p>Calculates the theoetical value of the component.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
@@ -508,11 +414,11 @@ and the phase change of the voltage follower.</p>
       </div>
     </a>
     <a class="right-next"
-       href="functions.lowpass.html"
+       href="generated/functions.highpass.calc_gain_direct.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">functions.lowpass package</p>
+        <p class="prev-next-title">functions.highpass.calc_gain_direct</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -536,22 +442,15 @@ and the phase change of the voltage follower.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.highpass.gain">functions.highpass.gain module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.gain.calc_gain_direct"><code class="docutils literal notranslate"><span class="pre">calc_gain_direct()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.gain.calc_gain_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_gain_from_theory()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-highpass-gain-module">functions.highpass.gain module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-highpass-voutc-module">functions.highpass.voutc module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-highpass-vouts-module">functions.highpass.vouts module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.highpass">Module contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-functions">Gain Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#same-phase-component">Same-Phase Component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthological-phase-component">Orthological-Phase Component</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.highpass.voutc">functions.highpass.voutc module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.voutc.calc_voutcosphi_direct"><code class="docutils literal notranslate"><span class="pre">calc_voutcosphi_direct()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.voutc.calc_voutcosphi_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_voutcosphi_from_theory()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.highpass.vouts">functions.highpass.vouts module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.vouts.calc_voutsinphi_direct"><code class="docutils literal notranslate"><span class="pre">calc_voutsinphi_direct()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.highpass.vouts.calc_voutsinphi_from_theory"><code class="docutils literal notranslate"><span class="pre">calc_voutsinphi_from_theory()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.highpass">Module contents</a></li>
 </ul>
   </nav></div>
 
