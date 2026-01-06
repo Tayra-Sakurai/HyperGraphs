@@ -1,0 +1,6 @@
+﻿functions.highpass.calc\_gain\_direct
+=====================================
+
+.. currentmodule:: functions.highpass
+
+.. autofunction:: calc_gain_direct

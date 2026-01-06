@@ -1,0 +1,37 @@
+functions.lowpass package
+=========================
+
+Submodules
+----------
+
+functions.lowpass.gain module
+-----------------------------
+
+.. automodule:: functions.lowpass.gain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+functions.lowpass.voutc module
+------------------------------
+
+.. automodule:: functions.lowpass.voutc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+functions.lowpass.vouts module
+------------------------------
+
+.. automodule:: functions.lowpass.vouts
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: functions.lowpass
+   :members:
+   :show-inheritance:
+   :undoc-members:
