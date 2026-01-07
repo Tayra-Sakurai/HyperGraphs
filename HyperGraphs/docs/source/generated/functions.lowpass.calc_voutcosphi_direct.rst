@@ -1,0 +1,6 @@
+﻿functions.lowpass.calc\_voutcosphi\_direct
+==========================================
+
+.. currentmodule:: functions.lowpass
+
+.. autofunction:: calc_voutcosphi_direct

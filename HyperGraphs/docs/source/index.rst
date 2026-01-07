@@ -1,5 +1,5 @@
 ﻿.. HyperGraphs documentation master file, created by
-   sphinx-quickstart on Sun Jan  4 13:21:32 2026.
+   sphinx-quickstart on Wed Jan  7 09:35:43 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -12,7 +12,7 @@ documentation for details.
 
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 6
    :caption: Contents:
 
    HyperGraphs

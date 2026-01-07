@@ -264,8 +264,10 @@ def plotter(
     ax1: mpl.axes.Axes
     ax2: mpl.axes.Axes
     ax3: mpl.axes.Axes
-    _, (ax1, ax2, ax3) = plt.subplots(1, 3,
-                                      subplot_kw=dict(box_aspect=8 / 13))
+    plt.style.use('grayscale')
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3,
+                                      subplot_kw=dict(box_aspect=8 / 13),
+                                      layout='constrained')
     frange = np.log10(np.max(data.frequency) / np.min(data.frequency))
     fremin = np.log10(np.min(data.frequency)) - frange * .05
     fremin = 10 ** fremin

@@ -1,0 +1,6 @@
+﻿functions.highpass.calc\_voutcosphi\_from\_theory
+=================================================
+
+.. currentmodule:: functions.highpass
+
+.. autofunction:: calc_voutcosphi_from_theory
