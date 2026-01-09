@@ -1,10 +1,10 @@
 ﻿"""This calculates the gain of the low-pass filter."""
 import numpy as np
-from ..highpass import _gain
+from ..highpass import calc_gain_direct
 from typing import Any
 from .._types import _Array1D
 
-calc_gain_direct = _gain.calc_gain_direct
+calc_gain_direct = calc_gain_direct
 
 
 def calc_gain_from_theory(
