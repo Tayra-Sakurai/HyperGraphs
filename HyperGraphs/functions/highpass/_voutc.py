@@ -72,7 +72,7 @@ def calc_voutcosphi_from_theory(
     den = omegatau ** 2 + 1
     den = np.sqrt(den)
     sine = 1 / den
-    cosine = - omegatau / den
+    cosine = omegatau / den
     cosineval = cosine * np.cos(phi_1) - sine * np.sin(phi_1)
     vout = v_in / np.sqrt(omegatau ** (-2) + 1)
     return vout * cosineval

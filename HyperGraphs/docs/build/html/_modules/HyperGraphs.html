@@ -415,7 +415,8 @@
     <span class="n">hilo</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">ExperimentData</span><span class="p">,</span>
-    <span class="n">tau</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tau</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nophi1</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span>
     <span class="n">_Array1DF</span><span class="p">,</span>
     <span class="n">_Array1DF</span><span class="p">,</span>
@@ -431,7 +432,6 @@
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>
         <span class="n">_Array1DF</span>
@@ -439,7 +439,6 @@
     <span class="n">Callable</span><span class="p">[</span>
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>
@@ -459,6 +458,8 @@
 <span class="sd">        The data.</span>
 <span class="sd">    tau : float | None, optional</span>
 <span class="sd">        The time constant.</span>
+<span class="sd">    nophi1 : bool, optional</span>
+<span class="sd">        Indicates whether to consider the phi_1 value.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -494,7 +495,6 @@
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>
         <span class="n">_Array1DF</span>
@@ -509,7 +509,6 @@
     <span class="n">h2</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span>
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>
@@ -531,43 +530,77 @@
         <span class="n">g2</span> <span class="o">=</span> <span class="n">lowpass</span><span class="o">.</span><span class="n">calc_voutcosphi_from_theory</span>
         <span class="n">h1</span> <span class="o">=</span> <span class="n">lowpass</span><span class="o">.</span><span class="n">calc_voutsinphi_direct</span>
         <span class="n">h2</span> <span class="o">=</span> <span class="n">lowpass</span><span class="o">.</span><span class="n">calc_voutsinphi_from_theory</span>
-    <span class="n">points_gain</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">v_out</span><span class="p">)</span>
-    <span class="n">fit_gain</span><span class="p">,</span> <span class="n">err_gain</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
-        <span class="n">f2</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
-        <span class="n">points_gain</span><span class="p">,</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="n">tau</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">points_voutcosphi</span> <span class="o">=</span> <span class="n">g1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_out</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span>
-    <span class="n">fit_voutcosphi</span><span class="p">,</span> <span class="n">err_voutcosphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
-        <span class="n">g2</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
-        <span class="n">points_voutcosphi</span><span class="p">,</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="n">tau</span><span class="p">,</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">),</span>
-                <span class="mi">0</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
     <span class="n">points_voutsinphi</span> <span class="o">=</span> <span class="n">h1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_out</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span>
-    <span class="n">fit_voutsinphi</span><span class="p">,</span> <span class="n">err_voutsinphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
-        <span class="n">h2</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
-        <span class="n">points_voutsinphi</span><span class="p">,</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="n">tau</span><span class="p">,</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">),</span>
-                <span class="mi">0</span>
+    <span class="n">points_gain</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">v_out</span><span class="p">)</span>
+    <span class="n">points_voutcosphi</span> <span class="o">=</span> <span class="n">g1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_out</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nophi1</span><span class="p">:</span>
+        <span class="n">fit_gain</span><span class="p">,</span> <span class="n">err_gain</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">f2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_gain</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="p">)</span>
         <span class="p">)</span>
-    <span class="p">)</span>
+        <span class="n">fit_voutcosphi</span><span class="p">,</span> <span class="n">err_voutcosphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">g2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_voutcosphi</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">),</span>
+                    <span class="mi">0</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">fit_voutsinphi</span><span class="p">,</span> <span class="n">err_voutsinphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">h2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_voutsinphi</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">),</span>
+                    <span class="mi">0</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fit_gain</span><span class="p">,</span> <span class="n">err_gain</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">f2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_gain</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">fit_voutcosphi</span><span class="p">,</span> <span class="n">err_voutcosphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">g2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_voutcosphi</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">fit_voutsinphi</span><span class="p">,</span> <span class="n">err_voutsinphi</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+            <span class="n">h2</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span>
+            <span class="n">points_voutsinphi</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">tau</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">v_in</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
     <span class="n">ax1</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span>
     <span class="n">ax2</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span>
     <span class="n">ax3</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span>
@@ -625,7 +658,6 @@
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>
         <span class="n">_Array1DF</span>
@@ -633,7 +665,6 @@
     <span class="n">h2</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span>
         <span class="p">[</span>
             <span class="n">_Array1DF</span><span class="p">,</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
             <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
         <span class="p">],</span>

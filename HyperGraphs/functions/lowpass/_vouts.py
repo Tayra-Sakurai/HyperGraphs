@@ -46,7 +46,7 @@ def calc_voutsinphi_from_theory(
     tauomega = 2 * np.pi * tau * frequency
     den = np.sqrt(tauomega ** 2 + 1)
     cosine = 1 / den
-    sine = tauomega / den
+    sine = - tauomega / den
     sineval = sine * np.cos(phi_1) + cosine * np.sin(phi_1)
     v_out = v_in / den
     return v_out * sineval

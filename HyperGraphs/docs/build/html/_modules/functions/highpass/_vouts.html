@@ -347,7 +347,7 @@
     <span class="n">frequency</span><span class="p">:</span> <span class="n">_Array1D</span><span class="p">,</span>
     <span class="n">tau</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="n">v_in</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-    <span class="n">phi_1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+    <span class="n">phi_1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_Array1D</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the theoetical value of the component.</span>
 
@@ -362,7 +362,7 @@
 <span class="sd">        The time constant.</span>
 <span class="sd">    v_in : floating[Any]</span>
 <span class="sd">        The input voltage.</span>
-<span class="sd">    phi_1 : floating[Any]</span>
+<span class="sd">    phi_1 : floating[Any], optional</span>
 <span class="sd">        The phase change of the voltage follower.</span>
 
 <span class="sd">    Returns</span>
