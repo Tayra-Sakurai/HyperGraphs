@@ -14,7 +14,7 @@ def calc_voutsinphi_from_theory(
     frequency: _Array1D,
     tau: np.floating[Any],
     v_in: np.floating[Any],
-    phi_1: np.floating[Any]
+    phi_1: np.floating[Any] = 0
 ) -> _Array1D:
     """This is the theoretical value calculator.
 
@@ -26,7 +26,7 @@ def calc_voutsinphi_from_theory(
         The time constant.
     v_in : floating[Any]
         The input voltage.
-    phi_1 : floating[ANy]
+    phi_1 : floating[Any], optional
         The phase change.
 
     Returns

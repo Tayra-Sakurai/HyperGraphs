@@ -45,7 +45,7 @@ def calc_voutcosphi_from_theory(
     frequency: _Array1D,
     tau: np.floating[Any],
     v_in: np.floating[Any],
-    phi_1: np.floating[Any]
+    phi_1: np.floating[Any] = 0
 ) -> _Array1D:
     """Calculates the theoetical value of the component.
 
@@ -60,7 +60,7 @@ def calc_voutcosphi_from_theory(
         The time constant.
     v_in : floating[Any]
         The input voltage.
-    phi_1 : floating[Any]
+    phi_1 : floating[Any], optional
         The phase change of the voltage follower.
 
     Returns

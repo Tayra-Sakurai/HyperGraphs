@@ -108,7 +108,8 @@ def plotter(
     hilo: bool,
     verbose: bool,
     data: ExperimentData,
-    tau: float | None = None
+    tau: float | None = None,
+    nophi1: bool | None = None
 ) -> tuple[
     _Array1DF,
     _Array1DF,
@@ -124,7 +125,6 @@ def plotter(
         [
             _Array1DF,
             np.floating[Any],
-            np.floating[Any],
             np.floating[Any]
         ],
         _Array1DF
@@ -132,7 +132,6 @@ def plotter(
     Callable[
         [
             _Array1DF,
-            np.floating[Any],
             np.floating[Any],
             np.floating[Any]
         ],
@@ -152,6 +151,8 @@ def plotter(
         The data.
     tau : float | None, optional
         The time constant.
+    nophi1 : bool, optional
+        Indicates whether to consider the phi_1 value.
 
     Returns
     -------
@@ -187,7 +188,6 @@ def plotter(
         [
             _Array1DF,
             np.floating[Any],
-            np.floating[Any],
             np.floating[Any]
         ],
         _Array1DF
@@ -202,7 +202,6 @@ def plotter(
     h2: Callable[
         [
             _Array1DF,
-            np.floating[Any],
             np.floating[Any],
             np.floating[Any]
         ],
@@ -224,43 +223,77 @@ def plotter(
         g2 = lowpass.calc_voutcosphi_from_theory
         h1 = lowpass.calc_voutsinphi_direct
         h2 = lowpass.calc_voutsinphi_from_theory
-    points_gain = f1(data.v_in, data.v_out)
-    fit_gain, err_gain = curve_fit(
-        f2,
-        data.frequency,
-        points_gain,
-        np.array(
-            (
-                tau,
-            )
-        )
-    )
-    points_voutcosphi = g1(data.v_out, data.phi)
-    fit_voutcosphi, err_voutcosphi = curve_fit(
-        g2,
-        data.frequency,
-        points_voutcosphi,
-        np.array(
-            (
-                tau,
-                np.mean(data.v_in),
-                0
-            )
-        )
-    )
     points_voutsinphi = h1(data.v_out, data.phi)
-    fit_voutsinphi, err_voutsinphi = curve_fit(
-        h2,
-        data.frequency,
-        points_voutsinphi,
-        np.array(
-            (
-                tau,
-                np.mean(data.v_in),
-                0
+    points_gain = f1(data.v_in, data.v_out)
+    points_voutcosphi = g1(data.v_out, data.phi)
+    if not nophi1:
+        fit_gain, err_gain = curve_fit(
+            f2,
+            data.frequency,
+            points_gain,
+            np.array(
+                (
+                    tau,
+                )
             )
         )
-    )
+        fit_voutcosphi, err_voutcosphi = curve_fit(
+            g2,
+            data.frequency,
+            points_voutcosphi,
+            np.array(
+                (
+                    tau,
+                    np.mean(data.v_in),
+                    0
+                )
+            )
+        )
+        fit_voutsinphi, err_voutsinphi = curve_fit(
+            h2,
+            data.frequency,
+            points_voutsinphi,
+            np.array(
+                (
+                    tau,
+                    np.mean(data.v_in),
+                    0
+                )
+            )
+        )
+    else:
+        fit_gain, err_gain = curve_fit(
+            f2,
+            data.frequency,
+            points_gain,
+            np.array(
+                (
+                    tau,
+                )
+            )
+        )
+        fit_voutcosphi, err_voutcosphi = curve_fit(
+            g2,
+            data.frequency,
+            points_voutcosphi,
+            np.array(
+                (
+                    tau,
+                    np.mean(data.v_in)
+                )
+            )
+        )
+        fit_voutsinphi, err_voutsinphi = curve_fit(
+            h2,
+            data.frequency,
+            points_voutsinphi,
+            np.array(
+                (
+                    tau,
+                    np.mean(data.v_in)
+                )
+            )
+        )
     ax1: mpl.axes.Axes
     ax2: mpl.axes.Axes
     ax3: mpl.axes.Axes
@@ -315,7 +348,6 @@ def save_point(
         [
             _Array1DF,
             np.floating[Any],
-            np.floating[Any],
             np.floating[Any]
         ],
         _Array1DF
@@ -323,7 +355,6 @@ def save_point(
     h2: Callable[
         [
             _Array1DF,
-            np.floating[Any],
             np.floating[Any],
             np.floating[Any]
         ],

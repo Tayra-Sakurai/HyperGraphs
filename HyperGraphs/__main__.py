@@ -30,6 +30,14 @@ def main() -> None:
                         '--output',
                         type=Path,
                         help='Output file path.')
+    parser.add_argument('-t',
+                        '--tau',
+                        type=float,
+                        help='The expected value of time constant.',
+                        default=1e-4)
+    parser.add_argument('--nophi1',
+                        action='store_true',
+                        help='Ignore the phase changes in voltage follower.')
     args = parser.parse_args()
     data = HyperGraphs.load_data(args.csvfile,
                                  args.encoding)
@@ -46,7 +54,9 @@ def main() -> None:
     k = HyperGraphs.plotter(
         hilo,
         verbose,
-        data
+        data,
+        args.tau,
+        args.nophi1
     )
     if args.output is not None:
         HyperGraphs.save_point(args.output, *k)
