@@ -299,23 +299,36 @@ def plotter(
     ax3: mpl.axes.Axes
     plt.style.use('grayscale')
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3,
-                                      subplot_kw=dict(box_aspect=8 / 13),
+                                      subplot_kw=dict(box_aspect=18 / 25),
                                       layout='constrained')
+    fig.set_size_inches(21, 13/3-1)
     frange = np.log10(np.max(data.frequency) / np.min(data.frequency))
     fremin = np.log10(np.min(data.frequency)) - frange * .05
     fremin = 10 ** fremin
     fremax = np.log10(np.max(data.frequency)) + frange * .05
     fremax = 10 ** fremax
     ax1.plot(data.frequency, points_gain, '.')
-    fs1 = np.geomspace(fremin, fremax)
+    fs1 = np.geomspace(fremin, fremax, 256)
     ax1.plot(fs1, f2(fs1, *fit_gain), '-')
     ax1.set_xscale('log')
+    ax1.set_xlabel('$f / \\text{Hz}$')
+    ax1.set_ylabel('$G / \\text{dB}$')
+    ax1.grid()
+    ax1.grid(which='minor', color='0.9')
     ax2.plot(data.frequency, points_voutcosphi, '.')
     ax2.plot(fs1, g2(fs1, *fit_voutcosphi), '-')
     ax2.set_xscale('log')
+    ax2.set_xlabel('$f / \\text{Hz}$')
+    ax2.set_ylabel('$V_{\\text{out}} \\cos \\phi / \\text{V}$')
+    ax2.grid()
+    ax2.grid(which="minor", color="0.9")
     ax3.plot(data.frequency, points_voutsinphi, '.')
     ax3.plot(fs1, h2(fs1, *fit_voutsinphi), '-')
+    ax3.set_xlabel('$f / \\text{Hz}$')
+    ax3.set_ylabel('$V_{\\text{out}} \\sin \\phi / \\text{V}$')
     ax3.set_xscale('log')
+    ax3.grid()
+    ax3.grid(which='minor', color='0.9')
     plt.show()
     if verbose:
         print('Gain Parameter:', fit_gain)
